@@ -1,0 +1,89 @@
+salesforce flow:
+it consists of two parts 1.flow builder
+                         2.process builder
+3.apex is also a way if you wanna make a custom flow
+
+1.flow builder = it is used when we dont know the future steps
+                 it is recommended between FB and PB
+2.process builder = it is used to change an existing process
+
+
+approve is also one of the tool which dosent belong to salesforce flow.
+
+
+
+APEX>>>>>
+Account a = new Account();//this creats a new record in the account object.
+(or)
+can add an attribute as well
+Account a = new Account(Name = 'saif' Phone = 8857328922);
+
+DML stands for data manupulation language ex inset update delete etc 
+
+//updating the values
+
+
+contact c = new Contact(FirstName = "ali" , lastName = 'alim');
+insert c;
+system.debug("old departnemt " + c.Department);
+c.Department = 'sales';
+update c;
+
+system.debug('new Department' + c.Department);
+
+
+<<<<COLLECTIONS:
+collection is the variable that can store multiple records
+they are of three types
+1.List
+2.Set
+3.Map
+
+
+1.list:Its a collection of ordered records
+ //creating a list and aassigning a value to it;
+   List<string> ListOfItems = new List<strings{'sa', 'va', }
+    system.debug("list of items" + ListOfItems);
+
+size()
+add()
+get()
+set()
+clear() are some of the methods used in the lists
+we cannot use set or map to interract with the database. List is only use to insert, update or interact eith the database.
+
+
+<<<2.Set: it is the collection of inordered records. in set we cannot use set[0],set[1] etc
+     it contains only unique values..
+
+   method to create set is same as list.
+
+
+<<<3. Maps; a map is a list of key value pairs, with each pair having a unique key in the map . both keys can be of any data type
+   
+  creating a map
+  Map<String, string> pCodeTopName = new Map< string, string>{
+   'one'=> 'tv', 'two'=>'Tablet'}
+
+
+
+<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>
+
+Account a = new Account(Name ='saif' ,lName = 'ali')
+ insert a ;
+system.debug(a);// only single record have been added to database
+
+<<<>>>>>>>>>
+List<Account> acclist = new List<Account>();
+Account a1 = new Account(Name ='saif1' ,lName = 'ali1')
+Account a2 = new Account(Name ='saif2' ,lName = 'ali2')
+Account a3 = new Account(Name ='saif3' ,lName = 'ali3')
+
+acclist.add(a1);
+acclist.add(a2):
+acclist.add(a3);
+
+insert acclist;
+
+this inserts a list of account in the databse
+
